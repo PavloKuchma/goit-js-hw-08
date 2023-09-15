@@ -2,7 +2,7 @@ import _throttle from 'lodash.throttle';
 
 const feedbackForm = document.querySelector('.feedback-form');
 const FORM_KEY = 'feedback-form-state';
-const FORM_DATA = {};
+// const FORM_DATA = {};
 
 const onInputHandler = _throttle(() => {
   const FORM_DATA = {
@@ -19,7 +19,7 @@ const onSubmitHandler = e => {
     email: feedbackForm.email.value.trim(),
     message: feedbackForm.message.value.trim(),
   };
-  if (FORM_DATA.email !== '' || FORM_DATA.message === 'a') {
+  if (FORM_DATA.message !== '') {
     console.log(FORM_DATA);
     localStorage.removeItem(FORM_KEY);
     e.currentTarget.reset();
